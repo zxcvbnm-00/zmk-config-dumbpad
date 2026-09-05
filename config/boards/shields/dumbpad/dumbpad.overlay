@@ -8,23 +8,23 @@
 
     /* Definisi Matrix Scanning GPIO (4 Rows x 4 Cols) */
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        wakeup-source;
-        diode-direction = "COL2ROW"; // Arah dioda standar Dumbpad
-
-        row-gpios
-            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 0 (D4)
-            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 1 (C6)
-            , <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2 (D7)
-            , <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 3 (E6)
-            ;
-
-        col-gpios
-            = <&gpio0  2 GPIO_ACTIVE_HIGH> // Col 0 (F4)
-            , <&gpio0 29 GPIO_ACTIVE_HIGH> // Col 1 (F5)
-            , <&gpio0 31 GPIO_ACTIVE_HIGH> // Col 2 (F6)
-            , <&gpio0 22 GPIO_ACTIVE_HIGH> // Col 3 (F7)
-            ;
+    compatible = "zmk,kscan-gpio-matrix";
+    wakeup-source;
+    diode-direction = "col2row";  // Changed from "COL2ROW"
+    
+    row-gpios
+        = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+    
+    col-gpios
+        = <&gpio0  2 GPIO_ACTIVE_HIGH>
+        , <&gpio0 29 GPIO_ACTIVE_HIGH>
+        , <&gpio0 31 GPIO_ACTIVE_HIGH>
+        , <&gpio0 22 GPIO_ACTIVE_HIGH>
+        ;
     };
 
     /* Matrix Transform untuk memetakan tombol di ZMK Keymap */
