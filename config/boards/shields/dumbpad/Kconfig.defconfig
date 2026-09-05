@@ -1,6 +1,6 @@
 if SHIELD_DUMBPAD
 
 config ZMK_KEYBOARD_NAME
-    default "Dumbpad nRF52840"
+    default "MACROPAD"
 
 endif
